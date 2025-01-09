@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Merriweather" , sans-serif;
+}
+
+body {
+    background-color: rgb(232, 221, 232);
+}
+
+.wrapper {
+    width: 100%; /*largeur*/
+    height: 100vh; /*hauteur*/
+    display: flex; /*rend les elements flexibles*/
+    align-items: center;
+    justify-content: center; /*centrer les elements verticalement et horizontalement*/
+}
+
+.container {
+    height: 400px;
+    display: flex;
+    flex-wrap: nowrap; /*pour que les elements ne partent pas a la ligne*/
+    justify-content: start;
+}
+
+.card {
+    width: 80px;
+    border-radius: 2rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    overflow: hidden; /*pour que les elements a l'interieur de la box ne la depasse pas*/
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: .6s cubic-bezier(.28, -0.03,0,0.99);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.card[for="c1"] {
+    background-image: url('img1.jpg');
+}
+
+
+.card[for="c2"] {
+    background-image: url('img2.jpg');
+}
+
+
+.card[for="c3"] {
+    background-image: url('img3.jpg');
+}
+
+.card[for="c4"] {
+    background-image: url('img4.jpg');
+}
+
+.row {
+    color: #fff;
+    display: flex;
+}
+
+input:checked + label {
+    width: 600px;
+}
+
+.icon {
+    background-color: #ab222a;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+input {
+    display: none;
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80px;
+    width: 520px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition-delay: .3s;
+    transition: all .3s ease;
+}
+
+input:checked + label .description {
+    opacity: 1 !important; /*important garantit que cette propriete va s'appliquer*/
+    transform: translateY(0) !important;
+}
+
+input:checked + label .row {
+    backdrop-filter: blur(5px);
+}
+
+h4 {
+    text-transform: uppercase;
+}
